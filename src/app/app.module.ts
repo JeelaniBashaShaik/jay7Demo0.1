@@ -1,21 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CsvModule } from './csv/csv.module';
 
-
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
+import { JbGridComponent } from './jb-grid/jb-grid.component';
+import { NgxDataGridModule } from '@jeelanibashashaik07/ngxdatagrid';
 
-import { environment } from '../environments/environment';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JbGridComponent
   ],
   imports: [
-    BrowserModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    BrowserModule,CsvModule,NgxDataGridModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
